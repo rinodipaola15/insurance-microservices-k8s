@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: purchase-service-db
+spec:
+  ports:
+    - port: 27017
+  selector:
+    app: purchase-service-db
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: purchase-service
+spec:
+  ports:
+  - port: 8080
+  selector:
+    app: purchase-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-service-db
+spec:
+  ports:
+    - port: 27017
+  selector:
+    app: user-service-db
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-service
+spec:
+  ports:
+    - port: 8080
+  selector:
+    app: user-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: policy-service-db
+spec:
+  ports:
+    - port: 27017
+  selector:
+    app: policy-service-db
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: policy-service
+spec:
+  ports:
+    - port: 8080
+  selector:
+    app: policy-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: receipt-service
+spec:
+  ports:
+    - port: 5000
+  selector:
+    app: receipt-service
+
