@@ -3,7 +3,7 @@ WORKDIR /app
 COPY . .
 RUN mvn package -P production
 
-FROM java:8
+FROM openjdk:8
 WORKDIR /app
 COPY --from=builder /app/target/purchaseservice-0.0.1-SNAPSHOT.jar ./purchase-service.jar
 CMD java -jar purchase-service.jar
